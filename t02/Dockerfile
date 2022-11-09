@@ -1,3 +1,7 @@
+#write a dockerfile that can run commands while creating an image and run commands after image is created
+#GOAL: diffrence btw RUN & CMD in a dockerfile
+#we will run python cowsay
+
 FROM ubuntu:latest 
 
 RUN apt update
