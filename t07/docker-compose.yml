@@ -1,0 +1,30 @@
+version: "3"
+services:
+  haproxy:
+    image: haproxytech/haproxy-alpine:2.4
+    volumes:
+      - /home/william/workspace/repo/container/t07:/usr/local/etc/haproxy
+    ports:
+      - "80:80"
+      - "8484:8484"
+
+  web1:
+    image: jmalloc/echo-server:latest
+
+  web2:
+    image: jmalloc/echo-server:latest
+
+  web3:
+   image: jmalloc/echo-server:latest 
+
+networks:
+  default:
+    external:
+        name: mynetwork
+
+
+# i used this blog as reference,
+#https://www.haproxy.com/blog/how-to-run-haproxy-with-docker/
+
+#if the container does not run, debbeug it to find out why,
+#https://medium.com/@pimterry/5-ways-to-debug-an-exploding-docker-container-4f729e2c0aa8
